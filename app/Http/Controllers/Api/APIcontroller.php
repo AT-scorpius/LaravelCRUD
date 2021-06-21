@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class calculatorController extends Controller
+class APIcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +15,9 @@ class calculatorController extends Controller
      */
     public function index()
     {
-        
-        //
+        $product = Product::all();
+        // return gettype(json_encode($product));
+        return json_encode($product);
     }
 
     /**
@@ -22,10 +25,7 @@ class calculatorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+  
 
     /**
      * Store a newly created resource in storage.
@@ -35,8 +35,7 @@ class calculatorController extends Controller
      */
     public function store(Request $request)
     {
-        
-       
+        //
     }
 
     /**
@@ -47,7 +46,6 @@ class calculatorController extends Controller
      */
     public function show($id)
     {
-      
         //
     }
 
@@ -57,10 +55,6 @@ class calculatorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
